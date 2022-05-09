@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2022_05_09_204211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "autos", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "modelo"
+    t.integer "ano"
+    t.integer "Precio"
+    t.string "ubicacion"
+    t.string "detalle"
+    t.integer "capacidad"
+    t.bigint "booking_id", null: false
+    t.index ["booking_id"], name: "index_autos_on_booking_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "fecha_inicio"
+    t.date "fecha_fin"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "autos", "bookings"
 end
