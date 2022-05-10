@@ -3,4 +3,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
   #Para que pueda ver los booking que ha hecho
+
+  #new, create, destroy 
 end
