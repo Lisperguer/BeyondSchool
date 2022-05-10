@@ -13,7 +13,11 @@
   </head>
 
   <body>
-    <%= render "pages/navbar" %>
+
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+        <%= render "pages/navbar" %>
+
     <%= yield %>
     <%= render "pages/footer" %>
   </body>
