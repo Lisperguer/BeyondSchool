@@ -1,7 +1,7 @@
 class CarsController < ApplicationController
 
   def index
-    @cars = Car.all
+    @cars = Car.where(user: current_user)
   end
 
   #show, edit, destroy, update, new, create
@@ -12,17 +12,17 @@ class CarsController < ApplicationController
   def new
     @car = Car.new
   end
-  
+
   def create
     @car = Car.new(car_params)
     @car.save
     # Agregar renderizado si alcanza
   end
-  
+
   def edit
     @car = Car.find(params[:id])
   end
-  
+
   def update
     @car = Car.find(params[:id])
     @car.update(car_params)
@@ -35,7 +35,7 @@ class CarsController < ApplicationController
     redirect_to cars_path #Redirige al index
   end
 
-  private 
+  private
   def car_params
     params.require(:car).permit(:modelo, :anio, :precio, :ubicacion, :detalles, :capacidad)
   end
