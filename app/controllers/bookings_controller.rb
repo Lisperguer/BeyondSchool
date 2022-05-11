@@ -1,9 +1,11 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
   end
 
-  
+  def new
+    @booking = Booking.new
+  end
 
   def create
     @booking = Booking.new(booking_params)
@@ -27,7 +29,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:fecha_inicio, :fecha_fin)
   end
-  #Para que pueda ver los booking que ha hecho
-
-  #new, create, destroy
 end
