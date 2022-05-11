@@ -1,21 +1,19 @@
-<br><br><br><br>
+<div class="container">
 
-<h2><%= @car.name %></h2>
-<p><%= @car.address %></p>
-<p><%= @car.phone_number %></p>
-<p><%= @car.category %></p>
-<br><br>
+<h2><%= @car.modelo %></h2>
+<p><%= @car.anio %></p>
+<p><%= @car.precio %></p>
+<p><%= @car.ubicacion %></p>
+<p><%= @car.detalles %></p>
+<p><%= @car.capacidad %></p>
+
+</div>
+<div class="container">
 <ul class="list-group">
-  <% @car.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.content %><br>Stars:<%= review.rating %></li>
+  <% @car.bookings.each do |booking| %>
+    <li class="list-group-item"><%= booking.fecha_inicio %></li>
+    <li class="list-group-item"><%= booking.fecha_fin %></li>
   <% end %>
-<%= link_to 'Atras', cars_path, class: "btn btn-primary"%> |
-<%= link_to 'Dejar opinion', new_car_review_path(@car), class: "btn btn-primary"%>
-
-
-  <%= f.input :modelo %>
-  <%= f.input :anio %>
-  <%= f.input :precio %>
-  <%= f.input :ubicacion %>
-  <%= f.input :detalles %>
-  <%= f.input :capacidad %>
+</div>
+<%= link_to 'Atras', cars_path, class: "btn btn-primary"%>
+<%= link_to 'Alquilar este auto', new_car_booking_path(@car), class: "btn btn-primary"%>
