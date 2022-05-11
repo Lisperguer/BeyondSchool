@@ -1,0 +1,21 @@
+<br><br><br><br>
+
+<h2><%= @car.name %></h2>
+<p><%= @car.address %></p>
+<p><%= @car.phone_number %></p>
+<p><%= @car.category %></p>
+<br><br>
+<ul class="list-group">
+  <% @car.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %><br>Stars:<%= review.rating %></li>
+  <% end %>
+<%= link_to 'Atras', cars_path, class: "btn btn-primary"%> |
+<%= link_to 'Dejar opinion', new_car_review_path(@car), class: "btn btn-primary"%>
+
+
+  <%= f.input :modelo %>
+  <%= f.input :anio %>
+  <%= f.input :precio %>
+  <%= f.input :ubicacion %>
+  <%= f.input :detalles %>
+  <%= f.input :capacidad %>

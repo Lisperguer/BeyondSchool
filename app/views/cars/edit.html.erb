@@ -1,0 +1,12 @@
+<%# Formulario edit y new %>
+<br><br><br><br><br>
+
+<%= simple_form_for(@cars) do |f| %>
+  <%= f.input :modelo %>
+  <%= f.input :anio %>
+  <%= f.input :precio %>
+  <%= f.input :ubicacion %>
+  <%= f.input :detalles %>
+  <%= f.input :capacidad %>
+  <%= f.submit %>
+<% end %>
