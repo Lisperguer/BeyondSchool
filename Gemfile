@@ -33,6 +33,7 @@ gem 'font-awesome-sass'
 gem 'simple_form', github: 'heartcombo/simple_form'
 gem 'devise'
  # "loque sea"
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   gem 'pry-byebug'
