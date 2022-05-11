@@ -8,7 +8,9 @@
 
 <%# #Como agregar datos de car? %>
 <%= booking.car.modelo %>
-<li><%=booking.fecha_inicio%></li>
+<%= booking.car.capacidad %>
+<p><li><%=booking.fecha_inicio%></li><%=booking.fecha_fin%></li> </p>
 </ul>
+<br>
 <% end %>
-<%= link_to "Volver al menu principal", new_car_path %>
+<%= link_to "Volver al menu principal", cars_path, class: "btn btn-primary" %>
