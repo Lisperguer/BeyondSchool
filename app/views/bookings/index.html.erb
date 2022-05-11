@@ -1,6 +1,19 @@
 <h1> My Bookings </h1>
 
 
+<div>
+  <h2>Booking List</h2>
+</div>
+<div class="container">
+  <ul>
+    <li><% @bookings.each do |book| %></li>
+    <li><%= book.id %></li>
+    <li><%= book.car_id %></li>
+    <li><%= book.fecha_inicio %></li>
+    <li><%= book.fecha_fin %></li>
+    <%= link_to "Anular Book", booking_path(book), method: :delete  %>
+
+
 <p> Usted tiene agendados en las siguientes fechas:</p>
 <br>
 <% @bookings.each do |booking| %>
