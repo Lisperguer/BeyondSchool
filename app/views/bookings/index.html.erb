@@ -1,3 +1,11 @@
+
+<h1> My Bookings </h1>
+
+
+<div>
+  <h2>Booking List</h2>
+</div>
+
 <div class="container">
   <div>
     <h2>Booking List</h2>
@@ -11,8 +19,24 @@
       <li><%= book.fecha_fin %></li>
       <%= link_to "Anular Book", booking_path(book), method: :delete  %>
 
+
       <li><% end %></li>
     </ul>
   </div>
   <%= link_to "volver inicio", cars_path %>
 </div>
+=======
+
+<p> Usted tiene agendados en las siguientes fechas:</p>
+<br>
+<% @bookings.each do |booking| %>
+<ul>
+
+<%# #Como agregar datos de car? %>
+<%= booking.car.modelo %>
+<%= booking.car.capacidad %>
+<p><li><%=booking.fecha_inicio%></li><%=booking.fecha_fin%></li> </p>
+</ul>
+<br>
+<% end %>
+<%= link_to "Volver al menu principal", cars_path, class: "btn btn-primary" %>
