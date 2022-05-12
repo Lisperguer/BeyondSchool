@@ -1,7 +1,10 @@
-<%= form_for[@car, @booking] do |f| %>
-  <%= f.label :fecha_inicio %>
-  <%= f.text_field :fecha_inicio %>
-  <%= f.label :fecha_fin %>
-  <%= f.text_field :fecha_fin %>
+<%= simple_form_for [@car, @booking] do |f| %>
+
+  <%= f.input :fecha_inicio, as: :datepicker %>
+  <%= f.input :fecha_fin, as: :datepicker %>
+  <% f.input :fecha_fin, as: :datepicker %>
+  <%# <%= f.hidden_field :car_id, :value => params[:car_id] %>
+
+
   <%= f.submit "Agendar en las fechas indicadas", class: "btn btn-primary" %>
 <% end %>

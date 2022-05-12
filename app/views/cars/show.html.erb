@@ -1,13 +1,13 @@
 <div class="container">
-
+<%= cl_image_tag @car.photo.key, height: 250, width: 400, crop: :fill%>
 <h2><%= @car.modelo %></h2>
 <p><%= @car.anio %></p>
 <p><%= @car.precio %></p>
 <p><%= @car.ubicacion %></p>
 <p><%= @car.detalles %></p>
 <p><%= @car.capacidad %></p>
-
 </div>
+
 <div class="container">
 <ul class="list-group">
   <% @car.bookings.each do |booking| %>

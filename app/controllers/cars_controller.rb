@@ -36,13 +36,13 @@ class CarsController < ApplicationController
   end
 
   def destroy
-    @car =  Car.find(params[:id])
+    @car = Car.find(params[:id])
     @car.delete
-    redirect_to cars_path #Redirige al index
+    redirect_to cars_path
   end
 
   private
   def car_params
-    params.require(:car).permit(:modelo, :anio, :precio, :ubicacion, :detalles, :capacidad)
+    params.require(:car).permit(:modelo, :anio, :precio, :ubicacion, :detalles, :capacidad, :photo)
   end
 end
