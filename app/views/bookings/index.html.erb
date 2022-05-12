@@ -10,7 +10,9 @@
 <%= booking.car.modelo %>
 <%= booking.car.capacidad %>
 <p><li><%=booking.fecha_inicio%></li><%=booking.fecha_fin%></li> </p>
+<p><li><% (booking.fecha_fin-booking.fecha_inicio) %></li></p>
     <li><%= link_to "Anular Book", booking_path(booking), method: :delete  %></li>
+
 
 </ul>
 <br>
