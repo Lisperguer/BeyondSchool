@@ -11,10 +11,9 @@
           <%= f.input :detalles %>
           <%= f.input :capacidad %>
           <%= f.input :photo, as: :file %>
-          <%= f.submit %>
+          <%= f.submit class: 'btn btn-outline-secondary' %> <%= link_to "Volver", cars_path, class: 'btn btn-outline-secondary'%>
         <% end %>
       </div>
     </div>
-  <%= link_to "Volver", cars_path, class: 'btn btn-primary btn-sm'%>
   </div>
 </div>
