@@ -1,16 +1,13 @@
-<div class="container">
-  <% @cars.each do |car| %>
   <div class="cards">
-    <div class="card-category">
-      <%= car.modelo %>
-      <%= car.capacidad %>
-      <%= car.ubicacion %>
-      <%= car.precio %>
-      <% if car.photo.key %>
-        <%= cl_image_tag car.photo.key, height: 250, width: 400, crop: :fill%>
-      <% end%>
-
-
-    </div>
-  <% end %>
-</div>
+    <% @cars.each do |car| %>
+      <div class="card-category">
+        <%= car.modelo %>
+        <%= car.capacidad %>
+        <%= car.ubicacion %>
+        <%= car.precio %>
+        <% if car.photo.key %>
+          <%= cl_image_tag car.photo.key, height: 250, width: 400, crop: :fill%>
+        <% end%>
+      </div>
+    <% end %>
+  </div>
