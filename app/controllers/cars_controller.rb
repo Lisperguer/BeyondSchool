@@ -21,8 +21,6 @@ class CarsController < ApplicationController
     else
       render :new
     end
-
-    # Agregar renderizado si alcanza
   end
 
   def edit
