@@ -5,7 +5,7 @@
     <% end %>
 
       <form class="d-flex align-items-center">
-        <input class="form-control me-2 rounded-search" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control me-2 rounded-search" type="search" placeholder="Buscar" aria-label="Search">
         <i class="fas fa-search" type="submit"></i>
       </form>
 
@@ -17,15 +17,15 @@
       <ul class="navbar-nav me-auto">
         <%# if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to "Página de inicio", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
-              <%= link_to "My cars", cars_path, class: "dropdown-item" %>
-              <%= link_to "Add new car", new_car_path, class: "dropdown-item" %>
-              <%= link_to "Log Out", destroy_user_session_path,method: :delete, class: "dropdown-item" %>
+              <%= link_to "Mis Reservaciones", bookings_path, class: "dropdown-item" %>
+              <%= link_to "Mis Autos", cars_path, class: "dropdown-item" %>
+              <%= link_to "Agregar un auto", new_car_path, class: "dropdown-item" %>
+              <%= link_to "Cerrar sesión", destroy_user_session_path,method: :delete, class: "dropdown-item" %>
 
               <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
@@ -38,7 +38,7 @@
       </ul>
     </div>
     <% else  %>
-    <li> <%= link_to "Log in", new_user_session_path, class:'btn btn-outline-primary' %></li>
+    <li> <%= link_to "Iniciar sesión", new_user_session_path, class:'btn btn-outline-primary' %></li>
     <% end %>
   </div>
 </div>
