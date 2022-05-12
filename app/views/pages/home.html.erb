@@ -1,13 +1,27 @@
-  <div class="cards">
-    <% @cars.each do |car| %>
-      <div class="card-category">
-        <%= car.modelo %>
-        <%= car.capacidad %>
-        <%= car.ubicacion %>
-        <%= car.precio %>
-        <% if car.photo.key %>
-          <%= cl_image_tag car.photo.key, height: 250, width: 400, crop: :fill%>
-        <% end%>
+<div class="container">
+
+  <% @cars.each do |car| %>
+    <div class="card" style="width: 18rem;">
+       <% if car.photo.key %>
+        <%= cl_image_tag car.photo.key%>
+      <% end%>
+      <div class="card-body">
+        <h5 class="card-title"><%= car.modelo %></h5>
       </div>
-    <% end %>
-  </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><i class="fa-solid fa-location-dot"></i>  <%= car.ubicacion %></li>
+        <li class="list-group-item"><i class="fa-solid fa-users"></i>  <%= car.capacidad %></li>
+        <li class="list-group-item price"><strong>  <%= car.precio %></strong></li>
+      </ul>
+        <div class="card-body">
+          <% if user_signed_in? %>
+            <%= link_to "Book this car", new_car_booking_path(car), class:"card-link btn btn-success" %>
+            <%= link_to "View Details", car_path(car), class:"card- btn btn-outline-success btn-sm" %>
+          <% else %>
+            <%= link_to "Book this car", new_user_session_path, class:"card-link btn btn-success" %>
+            <%= link_to "View Details", new_user_session_path, class:"card- btn btn-outline-success btn-sm" %>
+          <% end %>
+        </div>
+      </div>
+  <% end %>
+</div>
