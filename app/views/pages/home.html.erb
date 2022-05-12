@@ -15,11 +15,11 @@
       </ul>
         <div class="card-body">
           <% if user_signed_in? %>
-            <%= link_to "Book this car", new_car_booking_path(car), class:"card-link btn btn-success" %>
-            <%= link_to "View Details", car_path(car), class:"card- btn btn-outline-success btn-sm" %>
+            <%= link_to "Réntame", new_car_booking_path(car), class: "card- btn btn-outline-primary btn-sm"  %>
+            <%= link_to "Ver detalles", car_path(car), class: "card- btn btn-outline-primary btn-sm"  %>
           <% else %>
-            <%= link_to "Book this car", new_user_session_path, class:"card-link btn btn-success" %>
-            <%= link_to "View Details", new_user_session_path, class:"card- btn btn-outline-success btn-sm" %>
+            <%= link_to "Réntame", new_user_session_path, class:"card- btn btn-outline-primary btn-sm" %>
+            <%= link_to "Ver detalles", new_user_session_path, class:"card- btn btn-outline-primary btn-sm" %>
           <% end %>
         </div>
       </div>

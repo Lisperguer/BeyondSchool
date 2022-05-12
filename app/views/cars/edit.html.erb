@@ -3,9 +3,9 @@
 
 <%= simple_form_for(@car) do |f| %>
   <%= f.input :modelo %>
-  <%= f.input :anio %>
+  <%= f.input :anio, label: :Año %>
   <%= f.input :precio %>
-  <%= f.input :ubicacion %>
+  <%= f.input :ubicacion, label: :Ubicación%>
   <%= f.input :detalles %>
   <%= f.input :capacidad %>
   <%= f.input :photo, as: :file %>
