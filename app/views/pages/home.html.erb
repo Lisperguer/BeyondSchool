@@ -1,18 +1,18 @@
 <div class="container">
 
   <% @cars.each do |car| %>
-    <div class="card" style="width: 18rem;">
-       <% if car.photo.key %>
-        <%= cl_image_tag car.photo.key%>
-      <% end%>
-      <div class="card-body">
-        <h5 class="card-title"><%= car.modelo %></h5>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><i class="fa-solid fa-location-dot"></i>  <%= car.ubicacion %></li>
-        <li class="list-group-item"><i class="fa-solid fa-users"></i>  <%= car.capacidad %></li>
-        <li class="list-group-item price"><strong>  <%= car.precio %></strong></li>
-      </ul>
+    <% if car.disponible  %>
+      <div class="card" style="width: 18rem;">
+        <% if car.photo.key %>
+          <%= cl_image_tag car.photo.key%>
+        <% end%>
+          <h5 class="card-title"><%= car.modelo %></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="fa-solid fa-location-dot"></i>  <%= car.ubicacion %></li>
+          <li class="list-group-item"><i class="fa-solid fa-users"></i>  <%= car.capacidad %></li>
+          <li class="list-group-item price"><strong>  <%= car.precio %></strong></li>
+        </ul>
         <div class="card-body">
           <% if user_signed_in? %>
             <%= link_to "Réntame", new_car_booking_path(car), class: "card- btn btn-outline-primary btn-sm"  %>
@@ -21,7 +21,9 @@
             <%= link_to "Réntame", new_user_session_path, class:"card- btn btn-outline-primary btn-sm" %>
             <%= link_to "Ver detalles", new_user_session_path, class:"card- btn btn-outline-primary btn-sm" %>
           <% end %>
-        </div>
+          </div>
       </div>
+    <% end %>
   <% end %>
 </div>
+
