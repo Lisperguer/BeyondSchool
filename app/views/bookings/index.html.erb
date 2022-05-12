@@ -1,21 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <br>
+            <h1> My bookings</h1>
+            <p> Usted tiene agendados en las siguientes fechas:</p>
+        </div>
+        <div class="col-6 right:0" >
+            <br>
+            <%= link_to "Volver al menu principal" , cars_path, class: 'btn btn-outline-secondary' %>
+        </div>
+    </div>
+</div>
+<div class="container p-4">
+    <% @bookings.each do |booking| %>
 
-<h1> My bookings</h1>
+        <div class="card-product-2 mt-4">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+                <h6>Modelo auto reservado: <%= booking.car.modelo %>
+                </h6>
+                <h6>Capacidad auto reservado: <%= booking.car.capacidad %>
+                </h6>
+                <h6>Usted lo ha arrendado en las fechas: <strong>
+                        <%=booking.fecha_inicio%>
+                    </strong> al <strong>
+                        <%=booking.fecha_fin%>
+                    </strong> por un total de <%= booking.fecha_fin-booking.fecha_inicio %> días</h6>
 
-<p> Usted tiene agendados en las siguientes fechas:</p>
-<br>
-<% @bookings.each do |booking| %>
-<ul>
+                <p>
+                    <%= link_to "Anular Book" , booking_path(booking), method: :delete %>
+                </p>
+            </div>
+        </div>
+        <br>
 
-<%# #Como agregar datos de car? %>
-<%= booking.car.modelo %>
-<%= booking.car.capacidad %>
-<p><li><%=booking.fecha_inicio%></li><%=booking.fecha_fin%></li> </p>
-<p> total dias arrendado : <%= (booking.fecha_fin-booking.fecha_inicio) %></p>
-<p> precio del arriendo : <%= (booking.fecha_fin-booking.fecha_inicio)*booking.car.precio %></p>
-    <li><%= link_to "Anular Book", booking_path(booking), method: :delete  %></li>
-
-
-</ul>
-<br>
-<% end %>
-<%= link_to "Volver al menu principal", cars_path, class: 'btn btn-outline-secondary' %>
+        <% end %>
+</div>
