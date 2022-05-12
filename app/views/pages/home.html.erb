@@ -2,11 +2,14 @@
   <% @cars.each do |car| %>
   <div class="cards">
     <div class="card-category">
-      <img src="https://images.unsplash.com/photo-1646161535915-4b9701625ba5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80" height = "180px  " alt="">
       <%= car.modelo %>
       <%= car.capacidad %>
       <%= car.ubicacion %>
       <%= car.precio %>
+      <% if car.photo.key %>
+        <%= cl_image_tag car.photo.key, height: 250, width: 400, crop: :fill%>
+      <% end%>
+
 
     </div>
   <% end %>
