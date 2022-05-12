@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @car = Car.find(params[:car_id])
+    @car = Car.find(params[:car_bookings_id])
     @booking.car = @car
     if @booking.save
       redirect_to car_path(@car)
