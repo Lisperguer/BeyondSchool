@@ -1,7 +1,7 @@
 
-<h1> My bookings</h1>
+<h1> Mis Reservaciones</h1>
 
-<p> Usted tiene agendados en las siguientes fechas:</p>
+<p> Usted tiene reservaciones en las siguientes fechas:</p>
 <br>
 <% @bookings.each do |booking| %>
 <ul>
@@ -12,7 +12,7 @@
 <p><li><%=booking.fecha_inicio%></li><%=booking.fecha_fin%></li> </p>
 <p> total dias arrendado : <%= (booking.fecha_fin-booking.fecha_inicio) %></p>
 <p> precio del arriendo : <%= (booking.fecha_fin-booking.fecha_inicio)*booking.car.precio %></p>
-    <li><%= link_to "Anular Book", booking_path(booking), method: :delete  %></li>
+    <li><%= link_to "Anular Reserva", booking_path(booking), method: :delete  %></li>
 
 
 </ul>

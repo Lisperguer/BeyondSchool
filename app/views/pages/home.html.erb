@@ -5,7 +5,6 @@
         <% if car.photo.key %>
           <%= cl_image_tag car.photo.key%>
         <% end%>
-        <div class="card-body">
           <h5 class="card-title"><%= car.modelo %></h5>
         </div>
         <ul class="list-group list-group-flush">
@@ -13,14 +12,14 @@
           <li class="list-group-item"><i class="fa-solid fa-users"></i>  <%= car.capacidad %></li>
           <li class="list-group-item price"><strong>  <%= car.precio %></strong></li>
         </ul>
-          <div class="card-body">
-            <% if user_signed_in? %>
-              <%= link_to "Book this car", new_car_booking_path(car), class:"card-link btn btn-success" %>
-              <%= link_to "View Details", car_path(car), class:"card- btn btn-outline-success btn-sm" %>
-            <% else %>
-              <%= link_to "Book this car", new_user_session_path, class:"card-link btn btn-success" %>
-              <%= link_to "View Details", new_user_session_path, class:"card- btn btn-outline-success btn-sm" %>
-            <% end %>
+        <div class="card-body">
+          <% if user_signed_in? %>
+            <%= link_to "Réntame", new_car_booking_path(car), class: "card- btn btn-outline-primary btn-sm"  %>
+            <%= link_to "Ver detalles", car_path(car), class: "card- btn btn-outline-primary btn-sm"  %>
+          <% else %>
+            <%= link_to "Réntame", new_user_session_path, class:"card- btn btn-outline-primary btn-sm" %>
+            <%= link_to "Ver detalles", new_user_session_path, class:"card- btn btn-outline-primary btn-sm" %>
+          <% end %>
           </div>
       </div>
     <% end %>
