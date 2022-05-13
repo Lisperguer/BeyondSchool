@@ -1,18 +1,22 @@
+<div class="container" id="containerbookings">
 <div class="row">
-        <div class="col-6">
-            <br>
-            <h1> Mis reservas</h1>
-            <p> Usted tiene reservas en las siguientes fechas:</p>
-        </div>
-        <div class="col-6 ">
-            <div class="right text-end">
-                <br>
-                <%= link_to "Volver al menu principal" , cars_path, class: 'btn btn-outline-secondary' %>
-            </div>
-        </div>
-    </div>
+  
+  <div class="col-6">
+      <br>
+      <h1> Mis reservas</h1>
+      <p> Usted tiene reservas en las siguientes fechas:</p>
+  </div>
+  <div class="col-6 ">
+      <div class="right text-end">
+          <br>
+          <%= link_to "Ver mis autos" , cars_path, class: 'btn btn-outline-secondary' %>
+      </div>
+  </div>
+</div>
+</div>
 </div>
 <div class="container" id="containerbookings">
+  
   <% @bookings.each do |booking| %>
     <div class="card-product mt-4">
       <% if booking.car.photo.key %>
@@ -28,4 +32,6 @@
       </div>
     </div>
   <% end %>
+
+  
 </div>
