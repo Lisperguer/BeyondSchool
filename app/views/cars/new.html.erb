@@ -1,19 +1,15 @@
 <div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3>Agregar un auto</h3>
-        <%= simple_form_for @car do |f| %>
-          <%= f.input :modelo %>
-          <%= f.input :anio, label: :Año %>
-          <%= f.input :precio %>
-          <%= f.input :ubicacion, label: :Ubicación %>
-          <%= f.input :detalles %>
-          <%= f.input :capacidad %>
-          <%= f.input :photo, as: :file %>
-          <%= f.submit class: 'btn btn-outline-secondary' %> <%= link_to "Volver", cars_path, class: 'btn btn-outline-secondary'%>
-        <% end %>
-      </div>
-    </div>
-  </div>
+<div class="bg-white rounded p-3 shadow">
+  <h3>Agregar un auto</h3>
+  <%= simple_form_for @car do |f| %>
+    <%= f.input :modelo %>
+    <%= f.input :anio, label: :Año %>
+    <%= f.input :precio %>
+    <%= f.input :ubicacion, label: :Ubicación %>
+    <%= f.input :detalles %>
+    <%= f.input :capacidad %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: 'btn btn-outline-secondary' %> <%= link_to "Volver", cars_path, class: 'btn btn-outline-secondary'%>
+  <% end %>
+</div>
 </div>
