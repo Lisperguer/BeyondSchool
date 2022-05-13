@@ -1,21 +1,31 @@
-
-<h1> Mis Reservaciones</h1>
-
-<p> Usted tiene reservaciones en las siguientes fechas:</p>
-<br>
-<% @bookings.each do |booking| %>
-<ul>
-
-<%# #Como agregar datos de car? %>
-<%= booking.car.modelo %>
-<%= booking.car.capacidad %>
-<p><li><%=booking.fecha_inicio%></li><%=booking.fecha_fin%></li> </p>
-<p> total dias arrendado : <%= (booking.fecha_fin-booking.fecha_inicio) %></p>
-<p> precio del arriendo : <%= (booking.fecha_fin-booking.fecha_inicio)*booking.car.precio %></p>
-    <li><%= link_to "Anular Reserva", booking_path(booking), method: :delete  %></li>
-
-
-</ul>
-<br>
-<% end %>
-<%= link_to "Volver al menu principal", cars_path, class: 'btn btn-outline-secondary' %>
+<div class="row">
+        <div class="col-6">
+            <br>
+            <h1> Mis reservas</h1>
+            <p> Usted tiene reservas en las siguientes fechas:</p>
+        </div>
+        <div class="col-6 ">
+            <div class="right text-end">
+                <br>
+                <%= link_to "Volver al menu principal" , cars_path, class: 'btn btn-outline-secondary' %>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" id="containerbookings">
+  <% @bookings.each do |booking| %>
+    <div class="card-product mt-4">
+      <% if booking.car.photo.key %>
+        <%= cl_image_tag booking.car.photo.key%>
+      <% end%>
+      <div class="card-product-infos">
+        <h5><strong>Modelo:</strong> <%= booking.car.modelo %></h5>
+        <h5><strong> Capacidad:</strong> <%= booking.car.capacidad %> personas</h5>
+        <h5><strong> Fecha: </strong><%=booking.fecha_inicio%> al <%=booking.fecha_fin%>.</h5>
+        <h5> <strong>Total de días: </strong><%= booking.fecha_fin-booking.fecha_inicio %></h5>
+        <br>
+        <%= link_to "Anular reserva" , booking_path(booking), class:"btn btn-outline-primary", method: :delete %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

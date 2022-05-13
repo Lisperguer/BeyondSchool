@@ -1,19 +1,39 @@
-<div class="container">
-<%= cl_image_tag @car.photo.key, height: 250, width: 400, crop: :fill%>
-<h2><%= @car.modelo %></h2>
-<p><%= @car.anio %></p>
-<p><%= @car.precio %></p>
-<p><%= @car.ubicacion %></p>
-<p><%= @car.detalles %></p>
-<p><%= @car.capacidad %></p>
-</div>
 
+  <div class="card-product">
+    <%= cl_image_tag @car.photo.key%>
+    <div class="card-product-infos">
+      <h3><%= @car.modelo.capitalize %></h3>
+      <p><%= @car.anio %></p>
+      <p><%= @car.precio %></p>
+      <p><%= @car.ubicacion %></p>
+      <p><%= @car.detalles %></p>
+      <p><%= @car.capacidad %></p>
+    </div>
+  </div>
 <div class="container">
-<ul class="list-group">
-  <% @car.bookings.each do |booking| %>
-    <li class="list-group-item"><%= booking.fecha_inicio %></li>
-    <li class="list-group-item"><%= booking.fecha_fin %></li>
-  <% end %>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Código de reserva</th>
+      <th scope="col">Fecha de inicio</th>
+      <th scope="col">Fecha de término</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @car.bookings.each do |booking| %>
+    <tr>
+      <th scope="row"><%=  booking.id %></th>
+      <td><%= booking.fecha_inicio %></td>
+      <td><%= booking.fecha_fin %></td>
+      <td><%= link_to "Anular reserva" , booking_path(booking), class:"btn btn-outline-primary", method: :delete %></p></td>
+    </tr>
+       <% end %>
+  </tbody>
+  </table>
+
+
+  <br>
 </div>
 <%= link_to 'Volver', cars_path, class: "btn btn-primary"%>
 <%= link_to 'Alquilar este auto', new_car_booking_path(@car), class: "btn btn-primary"%>
