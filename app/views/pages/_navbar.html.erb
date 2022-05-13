@@ -1,13 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to cars_path, class: "navbar-brand" do %>
-      <%= image_tag "https://www.elparana.com/wp-content/uploads/2016/10/auto-electrico.jpg" %>
+      <%= image_tag "https://www.welovesolo.com/wp-content/uploads/2014/08/p16fepdsn31csuana114r1qr217ra9-details.jpg" %>
     <% end %>
-
-      <form class="d-flex align-items-center">
-        <input class="form-control me-2 rounded-search" type="search" placeholder="Buscar" aria-label="Search">
-        <i class="fas fa-search" type="submit"></i>
-      </form>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -20,7 +15,7 @@
             <%= link_to "Página de inicio", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://cdn2.iconfinder.com/data/icons/audio-16/96/user_avatar_profile_login_button_account_member-512.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Mis Reservas", bookings_path, class: "dropdown-item" %>
               <%= link_to "Mis Autos", cars_path, class: "dropdown-item" %>
