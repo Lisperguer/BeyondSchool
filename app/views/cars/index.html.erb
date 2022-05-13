@@ -9,24 +9,18 @@
 
   <% @cars.each do |car| %>
     <div class="card" style="width: 18rem;">
-      <% if car.photo.key %>
-        <%= cl_image_tag car.photo.key %>
-          <% end %>
-            <h5>
-              <%=car.modelo.capitalize %>
-            </h5>
-            <div class="list-group list-group-flush">
-              <li class="list-group-item"><strong>
-                  <%= link_to "Ver detalle" , car_path(car), class: 'btn btn-outline-secondary' %>
-                </strong></li>
-              <li class="list-group-item">
-                <%= link_to "Modificar" , edit_car_path(car), class: 'btn btn-outline-secondary' %>
-              </li>
-              <li class="list-group-item">
-                <%= link_to "Eliminar" , car_path(car), method: :delete, data: {
-                  confirm: "Are you sure you want to delete this car?" }, class: 'btn btn-outline-secondary' %>
-              </li>
-            </div>
+       <% if car.photo.key %>
+        <%= cl_image_tag car.photo.key, style: "height: 150px; width: 100%;"%>
+      <% end %>
+      <h5>
+      <%=car.modelo.capitalize %>
+      </h5>
+      <div class="list-group list-group-flush">
+        <li class="list-group-item"><strong><%= link_to "Ver detalle", car_path(car), class: 'btn btn-outline-secondary' %></strong></li>
+        <li class="list-group-item"><%= link_to "Modificar", edit_car_path(car), class: 'btn btn-outline-secondary' %></li>
+        <li class="list-group-item"><%= link_to "Eliminar", car_path(car), method: :delete, data: { confirm: "Are you sure you want to delete this car?" }, class: 'btn btn-outline-secondary'%></li>
+      </div>
+
     </div>
     <% end %>
 </div>
