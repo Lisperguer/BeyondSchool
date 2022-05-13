@@ -1,11 +1,18 @@
-
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
+.card-product {
+  height: 220px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex
 }
 
-.card-product h5 {
+.card-product img {
+  width: 330px;
+  object-fit: contain;
+}
+
+
+.card-product h2 h3 h5 {
+
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -23,8 +30,22 @@
   padding: 16px;
 }
 
-.container {
+#containerhome {
   display: flex;
   justify-content: space-evenly;
   padding: 30px
+}
+
+.buttons {
+  justify-content: space-around;
+}
+
+#containerindex {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 30px
+}
+
+#listaBookings {
+  width: fit-content;
 }
