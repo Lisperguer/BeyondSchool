@@ -1,14 +1,17 @@
 <%# Formulario edit y new %>
-<br><br><br><br><br>
-
-<%= simple_form_for(@car) do |f| %>
-  <%= f.input :modelo %>
-  <%= f.input :anio, label: :Año %>
-  <%= f.input :precio %>
-  <%= f.input :ubicacion, label: :Ubicación%>
-  <%= f.input :detalles %>
-  <%= f.input :capacidad %>
-  <%= f.input :photo, as: :file %>
-
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <h2>Editar</h2>
+  <br>
+  <%= simple_form_for(@car) do |f| %>
+    <%= f.input :modelo %>
+    <%= f.input :anio, label: :Año %>
+    <%= f.input :precio %>
+    <%= f.input :ubicacion, label: :Ubicación%>
+    <%= f.input :detalles %>
+    <%= f.input :capacidad %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+  <br>
+  <br>
+</div>
