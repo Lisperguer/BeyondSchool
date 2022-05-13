@@ -11,14 +11,28 @@
     </div>
   </div>
 <div class="container">
-    <ul class="list-group" id="listaBookings">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Código de reserva</th>
+      <th scope="col">Fecha de inicio</th>
+      <th scope="col">Fecha de término</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
       <% @car.bookings.each do |booking| %>
-        <li class="list-group-item"><%= booking.fecha_inicio %></li>
-        <li class="list-group-item"><%= booking.fecha_fin %></li>
-        <%= link_to "Anular reserva" , booking_path(booking), class:"btn btn-outline-primary", method: :delete %></p>
+    <tr>
+      <th scope="row"><%=  booking.id %></th>
+      <td><%= booking.fecha_inicio %></td>
+      <td><%= booking.fecha_fin %></td>
+      <td><%= link_to "Anular reserva" , booking_path(booking), class:"btn btn-outline-primary", method: :delete %></p></td>
+    </tr>
+       <% end %>
+  </tbody>
+  </table>
 
-        <br>
-      <% end %>
+
   <br>
 </div>
 <%= link_to 'Volver', cars_path, class: "btn btn-primary"%>
