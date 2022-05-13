@@ -33,7 +33,8 @@
 #containerhome {
   display: flex;
   justify-content: space-evenly;
-  padding: 30px
+  padding: 30px;
+  flex-wrap: wrap;
 }
 
 .buttons {
